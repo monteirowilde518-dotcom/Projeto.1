@@ -2,6 +2,6 @@ RewriteEngine On
 Options -Indexes
 
 # Bloquear acesso a arquivos .env e .json sensíveis
-<FilesMatch "\.(env|json)$">
+<FilesMatch "\.(env)$">
     Require all denied
 </FilesMatch>
