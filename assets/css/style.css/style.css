@@ -1,0 +1,16 @@
+/**/
+
+ body {
+      background-color: #e9ffac;
+      font-family: "Arial";
+      color: #3138b8;
+      padding: 20px;
+    }
+    h1 {
+      color: #3138b8;
+    }
+    ul {
+      background-color: #ffffff;
+      border-radius: 20px;
+    }
+
