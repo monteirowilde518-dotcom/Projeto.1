@@ -1,0 +1,61 @@
+body {
+  background-color: #e9ffac;
+  font-family: "Arial";
+  color: #3138b8;
+  padding: 20px;
+}
+h1 {
+  color: #3138b8;
+}
+ul {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+
+
+
+
+form
+{
+    width: 50%;
+    background-color: #f1f1f1;
+    padding: 15px;
+    display: block;
+    float: left;
+}
+
+
+form input, textarea, select
+{
+    display: block;
+    padding: 8ex;
+    margin: 10px 0px;
+    width: 97%;
+    border-radius: 8px;
+    border: 1px solid #e9ffac;
+    color: black;
+}
+
+input::placeholder {
+    color: #cac9c9b0;
+}
+
+form textarea
+{
+    resize: nome;
+}
+
+button{
+    padding: 10px;
+    background-color: #3138b8;
+    color: azure;
+    border: nome;
+    font-size: lrem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.8;
+}
