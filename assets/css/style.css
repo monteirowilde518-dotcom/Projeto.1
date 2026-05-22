@@ -21,10 +21,10 @@ form input,
 textarea,
 select {
   display: block;
-  padding: 10px; 
+  padding: 10px;
   margin: 10px 0;
   width: 100%;
-  max-width: 600px; 
+  max-width: 600px;
   border-radius: 8px;
   border: 1px solid #e9ffac;
   color: black;
@@ -42,7 +42,7 @@ button {
   padding: 10px;
   background-color: #3138b8;
   color: azure;
-  border: none; 
+  border: none;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
@@ -58,11 +58,36 @@ form {
   padding: 20px;
   border-radius: 10px;
 }
-body {font-family: Arial; padding: 40px;}
-nav {margin-bottom: 30px;}
-nav a {text-decoration: none; color: black; padding: 10px; transition: 0.3s; }
-nav a:hover {background: black; color: white; border-radius: 5px;}
-button {padding: 10px 20px; background: darkblue; color: white; cursor: pointer;}
-button:hover {background: royalblue;}
-li:first-child {color: red;}
-li:first-child {color: blue;}
+body {
+  font-family: Arial;
+  padding: 40px;
+}
+nav {
+  margin-bottom: 30px;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  transition: 0.3s;
+}
+nav a:hover {
+  background: black;
+  color: white;
+  border-radius: 5px;
+}
+button {
+  padding: 10px 20px;
+  background: darkblue;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: royalblue;
+}
+li:first-child {
+  color: red;
+}
+li:first-child {
+  color: blue;
+}
