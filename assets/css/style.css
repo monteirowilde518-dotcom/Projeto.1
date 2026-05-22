@@ -91,3 +91,13 @@ li:first-child {
 li:first-child {
   color: blue;
 }
+.container {
+  display: flex;
+  gap: 20px;
+}
+.card {
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
