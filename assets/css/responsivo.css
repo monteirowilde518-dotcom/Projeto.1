@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: royalblue;
+  color: white;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 600px) {
+  .cotainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

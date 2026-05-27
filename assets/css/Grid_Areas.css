@@ -1,0 +1,40 @@
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 100px 1fr 80px;
+    grid-template-areas:
+     "header header"
+     "menu content"
+     "footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color:#8e5697;
+    height: 90px;
+}
+aside {
+    grid-area: menu;
+    background-color: #99818f;
+    
+}   
+main{
+    grid-area: content;
+    background-color: #b2bcf9;
+    
+}
+footer{
+    grid-area: footer;
+    background-color: #ad4f68;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "content"
+        "footer";
+    }
+}
