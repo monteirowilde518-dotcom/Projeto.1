@@ -57,13 +57,16 @@ let soma = prompt("Deseja sair");
 console.log(resposta);
 
 //---------------------------------------
-//let numero1 = 10;
-//let numero2 = 5;
+let numero1 = 10;
+let numero2 = 5;
 // Operações e saídas no console
-//console.log(numero1 + numero2); // 15
-//console.log(numero1 - numero2); // 5
-//console.log(numero1 * numero2); // 50
-//console.log(numero1 / numero2); // 2
+console.log(numero1 + numero2); // 15
+console.log(numero1 - numero2); // 5
+console.log(numero1 * numero2); // 50
+console.log(numero1 / numero2); // 2
 
 let nome = "João";
 console.log("Ola" + nome);
+
+let nome = "Maria";
+console.log(`Olá $(nome)`);
