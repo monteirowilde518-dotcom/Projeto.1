@@ -50,23 +50,41 @@ alert("Bem-vindo!");
 //console.log(nome)
 //let nome; = "João"
 
-let nome = prompt("Digite seu nome");
-console.log(nome);
+//let nome = prompt("Digite seu nome");
+//console.log(nome);
 
-let soma = prompt("Deseja sair");
-console.log(resposta);
+//let soma = prompt("Deseja sair");
+//console.log(resposta);
 
 //---------------------------------------
-let numero1 = 10;
-let numero2 = 5;
+//let numero1 = 10;
+//let numero2 = 5;
 // Operações e saídas no console
-console.log(numero1 + numero2); // 15
-console.log(numero1 - numero2); // 5
-console.log(numero1 * numero2); // 50
-console.log(numero1 / numero2); // 2
+//console.log(numero1 + numero2); // 15
+//console.log(numero1 - numero2); // 5
+//console.log(numero1 * numero2); // 50
+//console.log(numero1 / numero2); // 2
 
-let nome = "João";
-console.log("Ola" + nome);
+//let n1 = Number(prompt("N1"));
+//let n2 = Number(prompt("N2"));
+//console.log(n1 + n2);
 
-let nome = "Maria";
-console.log(`Olá $(nome)`);
+
+//let nome = "João";
+//console.log("Ola" + nome);
+
+//let nome = "Maria";
+//console.log(`Olá $(nome)`);
+
+
+// Coleta de dados 
+let nome = print("Seu nome");
+let idade = Number(prompt("Sua idade"))
+
+// Exibição
+alert(`Olá ${nome}`);
+console.log(`Idade: ${idade}`);
+
+// Cálculo e Saída
+let proximo = idade + 1;
+alert(`Próximo ano: ${proximo}`);
