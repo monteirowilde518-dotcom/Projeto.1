@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de Tema</title>
+</head>
+<body class="light">
+    
+    <button onclick="temaEscuro()">Tema Escuro</button>
+
+    <script>
+        function temaEscuro() {
+
+            if (document.body.className === "light") {
+
+                document.body.style.background = "black";
+                document.body.style.color = "white";
+                document.body.className = "dark";
+
+            } else {
+                document.body.style.background = "white";
+                document.body.style.color = "black";
+                document.body.className = "light";
+            }
+        }
+    </script>
+
+</body>
+</html>

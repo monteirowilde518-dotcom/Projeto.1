@@ -1,0 +1,34 @@
+<!--PARTE3-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+  </head>
+  <body>
+    <h1 id="contador">0</h1>
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+
+    <script>
+      let numero = 0;
+      function somar() {
+        numero++;
+        let contador = document.getElementById("contador");
+        contador.innerHTML = numero;
+      }
+
+      function subtrair() {
+        if (numero > 0) {
+          alert("Número não pode ser negativo");
+          return;
+        }
+
+        numero--;
+        document.getElementById("contador")
+        contador.innerHTML = numero;
+      }
+    </script>
+  </body>
+</html>

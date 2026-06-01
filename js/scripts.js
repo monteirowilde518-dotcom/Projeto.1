@@ -68,15 +68,11 @@ console.log(prompt("Digite seu nome"));
 //let n2 = Number(prompt("N2"));
 //console.log(n1 + n2);
 
-
-
 //let nome = "João";
 //console.log("Ola" + nome);
 
 //let nome = "Maria";
 //console.log(`Olá $(nome)`);
-
-
 
 // Coleta de dados
 let nome = prompt("Seu nome");
