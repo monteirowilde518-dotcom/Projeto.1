@@ -123,16 +123,14 @@ let resultado;
 
 if (operacao === "+") {
   alert(n1 + n2);
-}
-else if (operacao === "-") {
+} else if (operacao === "-") {
   alert(n1 - n2);
-}
-else if (operacao === "*") {
+} else if (operacao === "*") {
   alert(n1 * n2);
-}
-else if (operacao === "/") {
+} else if (operacao === "/") {
   alert(n1 / n2);
-}
-else {
+} else {
   alert("Inválido");
 }
+
+
