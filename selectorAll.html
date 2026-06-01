@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="prt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectorAII</title>
+</head>
+<body>
+    
+    <ul>
+        <li class="item">HTML</li>
+        <li class="item">CSS</li>
+        <li class="item">JS</li>
+    </ul>
+
+     
+
+    <script>
+
+        //console.log(itens[0]);
+        //console.log(itens[1]);
+        //console.log(itens[2]);
+
+        itens.forEach(function(item){
+
+            itens[1].style.color = "bold";
+
+            itens.addEventListener("click", function() {
+                console.log("Item clicado: " + item.innerHTML);
+            });
+        })
+
+        // selecionar todos os itens
+        const itens = document.querySelectorAll(".item");
+        document.querySelectorAll(".item")
+
+        //Resultado: NodeList(3) [li.item, li.item, li.item]
+        console.log(itens);
+    </script>
+
+</body>
+</html>
