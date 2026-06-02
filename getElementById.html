@@ -1,0 +1,67 @@
+<!--PARTE2-->
+<!DOCTYPE html>
+<html lang="prt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+</head>
+<body>
+    
+
+    <h1 id="titulo">Meu site 0</h1>
+    
+    <script>
+    function mudarTexto() {
+        let titulo = document.getElementById("titulo");
+        titulo.innerHTML = "Texto alterado!";
+      }
+    
+      let titulo = document.getElementById("titulo");
+      console.log(titulo);
+
+      titulo.innerHTML = "Meu site atualizado";
+
+      console.log(titulo);
+      titulo.innerHTML = "Meu titulo";
+
+      function mudarTexto() {
+        let titulo = document.getElementById("titulo");
+        titulo.innerHTML = "Texto alterado!";
+      }
+
+      function alterarCor() {
+        let titulo = document.getElementById("titulo");
+        titulo.style.color = "blue";
+      }
+
+    </script>
+    <button onclick="mudarTexto()">AlterarTexto</button>
+    <button onclick="alterarCor()">AlterarCor</button>
+
+    <script>
+
+      function clicou() {
+        alert("Botão clicado!");
+      }
+
+      function titulo() {
+        mudarTexto();
+        mudarCor();
+      }
+
+      console.log(titulo);
+      titulo.innerHTML = "Meu titulo";
+
+      function mudarTexto() {
+        let titulo = document.getElementById("titulo");
+        titulo.innerHTML = "Texto alterado!";
+      }
+
+      function alterarCor() {
+        let titulo = document.getElementById("titulo");
+        titulo.style.color = "blue";
+      }
+    </script>
+</body>
+</html>
