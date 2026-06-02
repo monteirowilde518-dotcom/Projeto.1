@@ -1,0 +1,27 @@
+<!--Mini Projeto 1-->
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+  </head>
+  <body>
+    <input id="tarefa" />
+    <button id="adicionar">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+      const input = document.querySelector("#tarefa");
+      const botao = document.querySelector("#adicionar");
+      const lista = document.querySelector("#lista");
+      botao.addEventListener("click", () => {
+        const item = document.createElement("li");
+        item.textContent = input.value;
+        lista.appendChild(item);
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>

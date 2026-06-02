@@ -1,0 +1,21 @@
+<!--Mini Projeto 2-->
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark_Mode</title>
+    <link href="./assets/css/dark_mode.css" rel="stylesheet" />
+  </head>
+  <body>
+    <button id="tema">Tema</button>
+
+    <script>
+      const botao = document.querySelector("#tema");
+
+      botao.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+      });
+    </script>
+  </body>
+</html>

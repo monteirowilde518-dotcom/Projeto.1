@@ -1,0 +1,23 @@
+<!--Mini Projeto 3-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contador_moderno</title>
+  </head>
+  <body>
+    <h1 id="contador">0</h1>
+    <button id="somar">+</button>
+
+    <script>
+      let numero = 0;
+      const contador = document.querySelector("#contador");
+      const botao = document.querySelector("#somar");
+      botao.addEventListener("click", () => {
+        numero++;
+        contador.textContent = numero;
+      });
+    </script>
+  </body>
+</html>
