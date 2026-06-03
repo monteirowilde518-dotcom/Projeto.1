@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Somando Valores</title>
+  </head>
+  <body>
+    <script>
+      function somar(...numeros) {
+        let resultado = 0;
+        for (const n of numeros) {
+          resultado += n;
+        }
+        return resultado;
+      }
+      console.log(somar(10, 20, 30));
+    </script>
+  </body>
+</html>
