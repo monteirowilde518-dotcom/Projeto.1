@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Tela</title>
+  </head>
+  <body>
+    <button id="carregar">Carregar usuários</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+      const button = document.querySelector("#carregar");
+      const lista = document.querySelector("#lista");
+
+      button.addEventListener("click", () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((res) => res.json())
+          .then((usuarios) => {
+            usuarios.forEach((usuario) => {
+              const li = document.createElement("li");
+              li.textContent = usuario.name + " -> email: " + usuario.email;
+              lista.appendChild(li);
+            });
+          });
+      });
+    </script>
+  </body>
+</html>
