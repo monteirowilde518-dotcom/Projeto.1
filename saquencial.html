@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sequencial</title>
+  </head>
+  <body>
+    <script>
+      async function carregar() {
+        const usuario = await fetch(
+          "https://jsonplaceholder.typicode.com/users/1",
+        );
+        const pedidos = await fetch("/perdidos");
+        console.log(usuario, pedidos);
+      }
+    </script>
+  </body>
+</html>

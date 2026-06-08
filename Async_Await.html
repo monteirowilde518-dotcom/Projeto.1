@@ -8,13 +8,20 @@
   <body>
     <script>
       async function carregarUsuario() {
-        const resposta = await fetch(
-          "https://jsonplaceholder.typicode.com/users",
-        );
-        const usuarios = await resposta.json();
-        console.log(usuarios);
+        try {
+          const resposta = await fetch(
+            "https://jsonplaceholder.typicode.com/users/1",
+          );
+          // O fetch não rejeita em erros 404/500
+          if (!resposta.ok) {
+            throw new Error("Erro na resposta: " + resposta.status);
+          }
+          const usuario = await resposta.json();
+          console.log(usuario);
+        } catch (error) {
+          console.error("Erro ao carregar usuário:", error);
+        }
       }
-
       carregarUsuario();
     </script>
   </body>
