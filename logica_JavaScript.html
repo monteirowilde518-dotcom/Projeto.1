@@ -1,0 +1,44 @@
+<!--Mine projeto de Buscar CEP e Lógica JavaScript-->
+<!doctype html>
+<html lang="pr-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar CEP/Lógica JS</title>
+  </head>
+  <body>
+
+     <!-- Estrutura básica do buscador-->
+    <input id="cep" placeholder="Digite o CEP">
+    <button id="buscar">Buscar</button>
+    <div id="resultado"></div>
+
+    <script>
+      const inputCep = document.querySelector("#cep");
+      const botaoBuscar = document.querySelector("#buscar");
+      const resultado = document.querySelector("#resultado");
+
+        botaoBuscar.addEventListener("click", async () => {
+        const cep = inputCep.value.trim();
+        if (cep === "") {
+          resultado.textContent = "Digite um CEP,";
+          return;
+        }
+        try {
+          const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json`);
+          const dados = await resposta.json();
+          if (dados.error) {
+            resultado.textContent = "CEP não encontrado,";
+            return;
+          }
+
+          console.log(dados)
+
+          resultado.innerHTML = `<p><b>Rua:</b> ${dados.logradouro}</p>...`;
+        } catch (erro) {
+          resultado.textContent = "Erro ao buscar";
+        }
+      });
+    </script>
+  </body>
+</html>
