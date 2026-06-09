@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalStorage</title>
+  </head>
+  <body>
+    <script>
+      //Salva Dados
+      localStorage.setItem("nome", "Rogério");
+
+      //Remover Item
+      //localStorage.removeItem("nome");
+
+      //Ler/Recuperar
+      const nome = localStorage.getItem("nome");
+      //Saída: "Rogério"
+
+      //Limpar Tudo
+      //localStorage.clear();
+
+      //correto (JSON.stringify)
+      const usuario = { nome: "Rogério",
+      idade: 35 };
+
+      localStorage.setItem("usuario", JSON.stringify(usuario));
+
+
+      // Exmplo: Controle de Aviso
+      const aviso = sessionStorage.getItem("visto");
+      if (aviso === "sim") {
+            console.log("Já mostrado.");
+      }
+      else {
+          alert("Bem-vindo!");
+      sessionStorage.setItem("visto", "Sim");
+      }
+    
+          //implementação de Dark Mode
+         // Salvando a escolha 
+         localStorage.setItem("theme", "dark");
+
+         // Na inicialização
+         const theme = localStorage.getItem("theme");
+
+         if (theme === "dark") {
+              document.body.classList.add("dark");
+         }
+    </script>
+  </body>
+</html>

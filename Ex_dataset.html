@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Simples</title>
+  </head>
+  <body>
+    <button data-id="10" data-nome="Notebook" data-preco="3500">Comprar</button>
+    
+    <script>
+      const botao = document.querySelector("button");
+
+      console.log(botao.dataset.id); //"10"
+      console.log(botao.dataset.nome); //"Notebook"
+      console.log(botao.dataset.preco); //"3500"
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex Múltiplos Botões</title>
+  </head>
+  <body>
+    <button class="produto" data-id="1" data-nome="Mouse" data-preco="80">
+      Mouse
+    </button>
+
+    <button class="produto" data-id="2" data-nome="Teclado" data-preco="150">
+      Teclado
+    </button>
+
+    <button class="produto" data-id="3" data-nome="Nonitor" data-preco="900">
+      Monitor
+    </button>
+
+    <script>
+      const botoes = document.querySelectorAll(".produto");
+      botoes.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          // Acessa o dataset de cada botão
+          const id = botao.dataset.id;
+          const nome = botao.dataset.nome;
+          const preco = Number(botao.dataset.preco);
+          console.log(id, nome, preco);
+        });
+      });
+    </script>
+  </body>
+</html>
