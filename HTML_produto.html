@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Prático</title>
+  </head>
+  <body>
+    <ul>
+      <li id="produto-10">
+        Produto 10
+
+        <button
+          class="btn-excluir"
+          data-method="DELETE"
+          data-id="10"
+          data-url="https://jsonplaceholder.typicode.com/posts/10"
+        >
+          Excluir
+        </button>
+      </li>
+    </ul>
+
+    <!--Implemetação: Lógica de Exclusão-->
+    <!--Código JavaScript (Async/Await)-->
+    <script>
+      const botoesExcluir = document.querySelectorAll(".btn-excluir");
+
+      botoesExcluir.forEach((botao) => {
+        botao.addEventListener("click", async () => {
+          const id = botao.dataset.id;
+          const url = botao.dataset.url;
+
+          try {
+            const resposta = await fetch(url, { method: "DELETE" });
+
+            if (resposta.ok) {
+              document.querySelector(`#produto-${id}`).remove();
+            }
+          } catch (erro) {console.error(erro);}
+        });
+      });
+    </script>
+  </body>
+</html>

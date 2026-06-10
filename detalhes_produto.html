@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Produto</title>
+  </head>
+  <body>
+    <h2 id="titulo-produto">Produto</h2>
+    <p id="preco-produto">Preço</p>
+    <button class="produto" data-nome="Mouse Gamer" data-preco="120">
+      Ver Mouse
+    </button>
+    <button class="produto" data-nome="Teclado Mecânico" data-preco="250">
+      Ver Teclado
+    </button>
+
+    <script>
+      const titulo = document.querySelector("#titulo-produto");
+      const precoTexto = document.querySelector("#preco-produto");
+      const botoes = document.querySelectorAll(".produto");
+
+      botoes.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          titulo.textContent = botao.dataset.nome;
+          precoTexto.textContent = `R$
+                ${botao.dataset.preco}`;
+        });
+      });
+    </script>
+  </body>
+</html>
