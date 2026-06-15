@@ -1,103 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #e9ffac;
-  font-family: "Arial";
-  color: #3138b8;
-  padding: 20px;
-}
-h1 {
-  color: #3138b8;
-}
-ul {
-  background-color: #ffffff;
-  border-radius: 20px;
-}
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-form input,
-textarea,
-select {
-  display: block;
-  padding: 10px;
-  margin: 10px 0;
-  width: 100%;
-  max-width: 600px;
-  border-radius: 8px;
-  border: 1px solid #e9ffac;
-  color: black;
-}
-
-input::placeholder {
-  color: #cac9c9b0;
-}
-
-form textarea {
-  resize: none;
-}
-
-button {
-  padding: 10px;
-  background-color: #3138b8;
-  color: azure;
-  border: none;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-form {
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 10px;
-}
-body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
   padding: 40px;
 }
-nav {
-  margin-bottom: 30px;
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
 }
-nav a {
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-  transition: 0.3s;
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
 }
-nav a:hover {
-  background: black;
-  color: white;
-  border-radius: 5px;
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
+
+input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+}
+
 button {
-  padding: 10px 20px;
-  background: darkblue;
+  padding: 12px 16px;
+  border: none;
+  background: #2563eb;
   color: white;
   cursor: pointer;
+  border-radius: 6px;
 }
+
 button:hover {
-  background: royalblue;
+  background: #1d4ed8;
 }
-li:first-child {
-  color: red;
+
+#contador {
+  margin-bottom: 15px;
+  font-weight: bold;
 }
-li:first-child {
-  color: blue;
-}
-.container {
+
+li {
+  list-style: none;
+  background: #f1f5f9;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
-.card {
-  width: 200px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+
+.tarefa-texto {
+  cursor: pointer;
+}
+
+.concluida {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.excluir {
+  background: #dc2626;
+}
+
+.excluir:hover {
+  background: #b91c1c;
 }

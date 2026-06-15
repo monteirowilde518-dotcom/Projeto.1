@@ -1,132 +1,134 @@
-alert("Bem-vindo!");
+let db;
 
-//let idade = 20;
-//idade = 21;
-//console.log(idade)
+const formulario = document.querySelector("#formulario");
+const input = document.querySelector("#tarefa");
+const lista = document.querySelector("#lista");
+const contador = document.querySelector("#contador");
 
-//const cidade = "Fortaleza";
-//const nome = "Ana";
-//nome = "Maria";
+const request = indexedDB.open("TodoDB", 1);
 
-//Ex
-//let estado
-//if (true) {
-//estados = "BA"
-//}
-//console.log(estado)
+request.onupgradeneeded = (event) => {
+  db = event.target.result;
 
-//Jeito Errado
-//if (true) {
-//var nome = "João";
-//}
-//console.log(nome);
+  db.createObjectStore("tarefas", {
+    keyPath: "id",
+    autoIncrement: true,
+  });
+};
 
-//Jeito Certo
-//if (true) {
-//let nome ="João;"
-//}
-//console.log(nome);
+request.onsuccess = (event) => {
+  db = event.target.result;
 
-//Jeito Errado
-//var nome = "Ana";
-//nome = "Maria";
-//console.warn(nome);
+  carregarTarefas();
+};
 
-//Jeito Certo
-//let nomeUser = "Ana";
-//   nomeUser = "Maria";
-//console.warn(nomeUser);
+request.onerror = () => {
+  console.log("Erro ao abrir o banco");
+};
 
-//Jeito Certo
-//var nome;
-//console.log(nome);
-//nome = "João";
+formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-//Jeito Errado
-//console.log(nome);
-//nome = "João";
+  const titulo = input.value.trim();
 
-//Jeito Errado
-//console.log(nome)
-//let nome; = "João"
+  if (titulo === "") {
+    alert("Digite uma tarefa");
+    return;
+  }
 
-console.log(prompt("Digite seu nome"));
+  adicionarTarefa(titulo);
 
-//let soma = prompt("Deseja sair");
-//console.log(resposta);
+  input.value = "";
+});
 
-//---------------------------------------
-//let numero1 = 10;
-//let numero2 = 5;
-// Operações e saídas no console
-//console.log(numero1 + numero2); // 15
-//console.log(numero1 - numero2); // 5
-//console.log(numero1 * numero2); // 50
-//console.log(numero1 / numero2); // 2
+function adicionarTarefa(titulo) {
+  const transaction = db.transaction("tarefas", "readwrite");
+  const store = transaction.objectStore("tarefas");
 
-//let n1 = Number(prompt("N1"));
-//let n2 = Number(prompt("N2"));
-//console.log(n1 + n2);
+  const tarefa = {
+    titulo: titulo,
+    concluida: false,
+  };
 
-//let nome = "João";
-//console.log("Ola" + nome);
+  store.add(tarefa);
 
-//let nome = "Maria";
-//console.log(`Olá $(nome)`);
-
-// Coleta de dados
-let nome = prompt("Seu nome");
-let idade = Number(prompt("Sua idade"));
-
-// Exibição
-alert(`Olá ${nome}`);
-console.log(`Idade: ${idade}`);
-
-// Cálculo e Saída
-let proximo = idade + 1;
-alert(`Próximo ano: ${proximo}`);
-
-//Mini Projeto 1:
-if (idade >= 18) {
-  alert("Maior de idade");
-} else {
-  alert("Menor de idade");
+  transaction.oncomplete = () => {
+    carregarTarefas();
+  };
 }
 
-//Mini Projeto 2:
-let nota = Number(prompt("Digite sua nota"));
-if (nota >= 7) {
-  alert("Aprovado");
-} else if (nota >= 5) {
-  alert("Recuperação");
-} else {
-  alert("Reprovado");
+function carregarTarefas() {
+  lista.innerHTML = "";
+
+  const transaction = db.transaction("tarefas", "readonly");
+  const store = transaction.objectStore("tarefas");
+
+  const request = store.getAll();
+
+  request.onsuccess = () => {
+    const tarefas = request.result;
+
+    tarefas.forEach((tarefa) => {
+      criarItemNaTela(tarefa);
+    });
+
+    atualizarContador(tarefas.length);
+  };
 }
 
-//Mini Projeto 3:
-let numero = Number(prompt("Digite um número"));
-if (numero % 2 === 0) {
-  alert("Número par");
-} else {
-  alert("Número ímpar");
+function criarItemNaTela(tarefa) {
+  const item = document.createElement("li");
+
+  const texto = document.createElement("span");
+  texto.textContent = tarefa.titulo;
+  texto.classList.add("tarefa-texto");
+
+  if (tarefa.concluida === true) {
+    texto.classList.add("concluida");
+  }
+
+  texto.addEventListener("click", () => {
+    alterarStatus(tarefa);
+  });
+
+  const botaoExcluir = document.createElement("button");
+  botaoExcluir.textContent = "Excluir";
+  botaoExcluir.classList.add("excluir");
+
+  botaoExcluir.addEventListener("click", () => {
+    excluirTarefa(tarefa.id);
+  });
+
+  item.appendChild(texto);
+  item.appendChild(botaoExcluir);
+
+  lista.appendChild(item);
 }
 
-//Mini Projeto 4:
-let n1 = Number(prompt("N1"));
-let n2 = Number(prompt("N2"));
-let operacao = prompt("Digite a operação (+, -, *, /)");
-let resultado;
+function alterarStatus(tarefa) {
+  const transaction = db.transaction("tarefas", "readwrite");
+  const store = transaction.objectStore("tarefas");
 
-if (operacao === "+") {
-  alert(n1 + n2);
-} else if (operacao === "-") {
-  alert(n1 - n2);
-} else if (operacao === "*") {
-  alert(n1 * n2);
-} else if (operacao === "/") {
-  alert(n1 / n2);
-} else {
-  alert("Inválido");
+  tarefa.concluida = !tarefa.concluida;
+
+  store.put(tarefa);
+
+  transaction.oncomplete = () => {
+    carregarTarefas();
+  };
 }
 
+function excluirTarefa(id) {
+  const transaction = db.transaction("tarefas", "readwrite");
+  const store = transaction.objectStore("tarefas");
 
+  store.delete(id);
+
+  transaction.oncomplete = () => {
+    carregarTarefas();
+  };
+}
+
+function atualizarContador(total) {
+  contador.textContent = `Total: ${total} tarefa(s)`;
+}
