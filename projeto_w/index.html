@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="cdn/style.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --navy: #0d1b4b;
+        --navy-card: #132057;
+        --green: #00f57a;
+        --teal: #1ecfb0;
+        --blue-btn: #0d1b4b;
+        --text-light: #e0e8ff;
+        --footer-bg: #0a1438;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--navy);
+        color: var(--text-light);
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ── HEADER ── */
+      header {
+        background-color: var(--green);
+        padding: 18px 32px;
+      }
+      header h1 {
+        color: var(--navy);
+        font-weight: 800;
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      /* ── MAIN LAYOUT ── */
+      .main-section {
+        padding: 36px 40px 40px;
+      }
+
+      /* ── LEFT COLUMN ── */
+      .profile-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--navy);
+        font-weight: 700;
+        margin: 0 auto;
+      }
+
+      .profile-name-label {
+        color: var(--green);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 18px;
+        margin-bottom: 2px;
+      }
+
+      .profile-name {
+        color: var(--green);
+        font-weight: 800;
+        font-size: 2.1rem;
+        line-height: 1.1;
+      }
+
+      .profile-image-placeholder {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+        color: var(--navy);
+        font-weight: 700;
+        margin-top: 28px;
+        max-width: 260px;
+      }
+
+      /* ── CARDS ── */
+      .card-custom {
+        background-color: var(--navy-card);
+        border: none;
+        border-radius: 6px;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .card-img-placeholder {
+        width: 100%;
+        height: 160px;
+        background-color: var(--teal);
+      }
+
+      .card-custom .card-body {
+        padding: 14px;
+      }
+
+      .card-custom .card-title {
+        color: var(--text-light);
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .card-custom .card-text {
+        color: #a0aec0;
+        font-size: 0.82rem;
+        line-height: 1.45;
+      }
+
+      .card-custom .btn-go {
+        background-color: var(--blue-btn);
+        color: #fff;
+        font-size: 0.78rem;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 16px;
+        margin-top: 10px;
+      }
+
+      .card-custom .btn-go:hover {
+        background-color: #00f57a;
+      }
+
+      /* ── CONTACT FORM ── */
+      .section-title {
+        color: var(--green);
+        font-weight: 700;
+        font-size: 1.15rem;
+        margin-bottom: 14px;
+        text-align: center;
+      }
+
+      .contact-label {
+        color: var(--green);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .contact-input {
+        width: 100%;
+        background-color: #c8d0e0;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        color: #111;
+        margin-bottom: 14px;
+        outline: none;
+      }
+
+      .contact-input:focus {
+        background-color: #dce4f0;
+        box-shadow: 0 0 0 2px var(--green);
+      }
+
+      .btn-enviar {
+        background-color: var(--blue-btn);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 36px;
+        font-size: 1rem;
+        font-weight: 600;
+        float: right;
+        cursor: pointer;
+      }
+
+      .btn-enviar:hover {
+        background-color: #1050b8;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: var(--footer-bg);
+        padding: 22px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .footer-block {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .footer-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--navy);
+        border: 2px solid var(--navy-card);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--text-light);
+        flex-shrink: 0;
+      }
+
+      .footer-info .label {
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--text-light);
+      }
+
+      .footer-info .value {
+        font-size: 0.85rem;
+        color: var(--text-light);
+      }
+
+      .footer-info a {
+        color: var(--text-light);
+        text-decoration: none;
+      }
+
+      .footer-info a:hover {
+        color: var(--green);
+        text-decoration: underline;
+      }
+
+      /* ── ALERTS ── */
+      #form-alert {
+        display: none;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Meu Portfólio</h1>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="main-section">
+      <div class="row g-4">
+        <!-- LEFT: Profile -->
+        <div
+          class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start"
+        >
+          <div class="profile-photo">X</div>
+          <p class="profile-name-label">Nome</p>
+          <h2 class="profile-name">William Monteiro</h2>
+          <div class="profile-image-placeholder">X</div>
+        </div>
+
+        <!-- RIGHT: Cards + Contact -->
+        <div class="col-12 col-md-9">
+          <!-- Cards Row -->
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-sm-4">
+              <div class="card-custom">
+                <div class="card-img-placeholder"></div>
+                <div class="card-body">
+                  <div class="card-title">Desenvolvimento de Software</div>
+                  <div class="card-text">
+                    Um exemplo rápido de texto para construir o título do cartão
+                    e compor a maior parte do conteúdo do cartão.
+                  </div>
+                  <button class="btn-go">Entre na Pagina</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="card-custom">
+                <div class="card-img-placeholder"></div>
+                <div class="card-body">
+                  <div class="card-title">Banco de Dados Relacional</div>
+                  <div class="card-text">
+                    Um exemplo rápido de texto para construir o título do cartão
+                    e compor a maior parte do conteúdo do cartão.
+                  </div>
+                  <button class="btn-go">Entre na Pagina</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="card-custom">
+                <div class="card-img-placeholder"></div>
+                <div class="card-body">
+                  <div class="card-title">Relatórios com Análise de Dados</div>
+                  <div class="card-text">
+                    Um exemplo rápido de texto para construir o título do cartão
+                    e compor a maior parte do conteúdo do cartão.
+                  </div>
+                  <button class="btn-go">Entre na Pagina</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="section-title">Comtatos</div>
+
+          <form id="contact-form" novalidate>
+            <label class="contact-label" for="nome">Nome</label>
+            <input class="contact-input" type="text" id="nome" placeholder="" />
+
+            <label class="contact-label" for="telefone">Telefone</label>
+            <input
+              class="contact-input"
+              type="tel"
+              id="telefone"
+              placeholder=""
+            />
+
+            <label class="contact-label" for="email">Email</label>
+            <input
+              class="contact-input"
+              type="email"
+              id="email"
+              placeholder=""
+            />
+
+            <div style="overflow: hidden">
+              <button type="submit" class="btn-enviar">Enviar</button>
+            </div>
+
+            <div id="form-alert" class="alert alert-success mt-3" role="alert">
+              Mensagem enviada com sucesso!
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-block">
+        <div class="footer-icon">X</div>
+        <div class="footer-info">
+          <div class="label">Telefone</div>
+          <div class="value">55+ 71 99151-7249</div>
+        </div>
+      </div>
+
+      <div class="footer-block">
+        <div class="footer-info" style="text-align: right">
+          <div class="label">Email</div>
+          <div class="value">
+            <a href="mailto:Adrianfoster518@gmail.com"
+              >monteirowilde518@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="footer-icon">X</div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const nome = document.getElementById("nome").value.trim();
+          const telefone = document.getElementById("telefone").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const alert = document.getElementById("form-alert");
+
+          if (!nome || !telefone || !email) {
+            alert.className = "alert alert-danger mt-3";
+            alert.textContent = "Por favor, preencha todos os campos.";
+            alert.style.display = "block";
+            return;
+          }
+
+          alert.className = "alert alert-success mt-3";
+          alert.textContent = "Mensagem enviada com sucesso!";
+          alert.style.display = "block";
+
+          this.reset();
+
+          setTimeout(() => {
+            alert.style.display = "none";
+          }, 4000);
+        });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="cdn/script.js"></script>
+  </body>
+</html>
