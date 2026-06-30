@@ -13,167 +13,137 @@
     <link href="cdn/style.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- CABEÇALHO -->
-    <header>
-      <h1>Meu Portfólio</h1>
-    </header>
+    <div class="page">
+      <header class="topbar">
+        <h1>Meu Portfólio</h1>
+      </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <section class="main-section">
-      <div class="row g-4">
-        <!-- LEFT: Profile -->
-        <div
-          class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start"
-        >
-          <div class="container-circulo">
-            <img src="cdn/midia/WhatsApp Image 2026-06-19 at 15.22.29.jpeg" alt="Minha Foto" />
-          </div>
-          <p class="profile-name-label">Nome</p>
-          <h2 class="profile-name">William Monteiro</h2>
-          <div class="profile-image-placeholder">X</div>
-        </div>
-
-        <!--À DIREITA: Cartões + Contato -->
-        <div class="col-12 col-md-9">
-          <!-- Cards Row -->
-          <div class="row g-3 mb-4">
-            <div class="col-12 col-sm-4">
-              <div class="card-custom">
-                <div class="card-img-placeholder"></div>
-                <div class="card-body">
-                  <div class="card-title">Desenvolvimento de Software</div>
-                  <div class="card-text">
-                    Como iniciante, estou motivado para crescer na área,
-                    contribuir com dedicação e aprender com profissionais
-                    experientes, entregando soluções de qualidade e
-                    desenvolvendo habilidades técnicas ao longo do tempo.
-                  </div>
-                  <button class="btn-go">Entre na Pagina</button>
-                </div>
-              </div>
+      <main class="content">
+        <section class="profile-area">
+          <div class="profile-card">
+            <div class="circle-image">
+              <img src="cdn/midia/WhatsApp Image 2026-06-19 at 15.22.29.jpeg" alt="Foto de perfil" />
             </div>
-            <div class="col-12 col-sm-4">
-              <div class="card-custom">
-                <div class="card-img-placeholder"></div>
-                <div class="card-body">
-                  <div class="card-title">Banco de Dados Relacional</div>
-                  <div class="card-text">
-                    Como iniciante, estou motivado para crescer na área de banco
-                    de dados, contribuir com dedicação, aprender com
-                    profissionais experientes e garantir que os dados da
-                    organização estejam sempre seguros, organizados e
-                    disponíveis com performance.
-                  </div>
-                  <button class="btn-go">Entre na Pagina</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-4">
-              <div class="card-custom">
-                <div class="card-img-placeholder"></div>
-                <div class="card-body">
-                  <div class="card-title">Relatórios com Análise de Dados</div>
-                  <div class="card-text">
-                    Como iniciante, estou motivado para crescer na área de
-                    análise de dados, contribuir com dedicação, aprender com
-                    profissionais experientes e transformar dados em relatórios
-                    claros que ajudem a empresa a tomar decisões mais
-                    assertivas.
-                  </div>
-                  <button class="btn-go">Entre na Pagina</button>
-                </div>
-              </div>
-            </div>
+            <p class="label">Nome</p>
+            <h2>William Monteiro</h2>
           </div>
 
-          <!-- Formulário de contato -->
-          <div class="section-title">Comtatos</div>
+          <div class="cards">
+            <article class="card">
+              <img
+                src="cdn/midia/Desenvolvimento de Software.jpg"
+                alt="Imagem do card 1"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>Desenvolvimento de Software</h3>
+                <p>
+                  Como iniciante, estou motivado para crescer na área,
+                  contribuir com dedicação e aprender com profissionais
+                  experientes, entregando soluções de qualidade e desenvolvendo
+                  habilidades técnicas ao longo do tempo.
+                </p>
+                <button type="button" onclick="abrirCard(1)">
+                  Entre no link
+                </button>
+              </div>
+            </article>
 
-          <form id="contact-form" novalidate>
-            <label class="contact-label" for="nome">Nome</label>
-            <input class="contact-input" type="text" id="nome" placeholder="" />
+            <article class="card">
+              <img
+                src="cdn/midia/972591ad-335d-4f7e-80d7-46b2a165cd25.webp"
+                alt="Imagem do card 2"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>Banco de Dados Relacional</h3>
+                <p>
+                  Também estou motivado para crescer na área de banco de dados,
+                  contribuir com dedicação, aprender com profissionais
+                  experientes e garantir que os dados da organização estejam
+                  sempre seguros, organizados e disponíveis com performance.
+                </p>
+                <button type="button" onclick="abrirCard(2)">
+                  Entre no link
+                </button>
+              </div>
+            </article>
 
-            <label class="contact-label" for="telefone">Telefone</label>
+            <article class="card">
+              <img
+                src="cdn/midia/Relatórios com Análise de Dados.png"
+                alt="Imagem do card 3"
+                class="card-img"
+              />
+              <div class="card-body">
+                <h3>Relatórios com Análise de Dados</h3>
+                <p>
+                  E por fim estou motivado para crescer na área de análise
+                  de dados, contribuir com dedicação, aprender com profissionais
+                  experientes e transformar dados em relatórios claros que
+                  ajudem a empresa a tomar decisões mais assertivas.
+                </p>
+                <button type="button" onclick="abrirCard(3)">
+                  Entre no link
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="contact-area">
+          <div class="large-image">
+            <img src="cdn/midia/2022-03-24-Como-um-desenvolvedor-pode-tornar-um-gestor-de-TI.jpg" alt="Imagem grande" />
+          </div>
+
+          <form class="contact-form" onsubmit="enviarFormulario(event)">
+            <h2>Contatos</h2>
+
+            <label for="nome">Nome</label>
             <input
-              class="contact-input"
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Digite seu nome"
+            />
+
+            <label for="telefone">Telefone</label>
+            <input
               type="tel"
               id="telefone"
-              placeholder=""
+              name="telefone"
+              placeholder="Digite seu telefone"
             />
 
-            <label class="contact-label" for="email">Email</label>
+            <label for="email">Email</label>
             <input
-              class="contact-input"
               type="email"
               id="email"
-              placeholder=""
+              name="email"
+              placeholder="Digite seu email"
             />
 
-            <div style="overflow: hidden">
-              <button type="submit" class="btn-enviar">Enviar</button>
-            </div>
-
-            <div id="form-alert" class="alert alert-success mt-3" role="alert">
-              Mensagem enviada com sucesso!
-            </div>
+            <button type="submit">Enviar</button>
           </form>
-        </div>
-      </div>
-    </section>
+        </section>
+      </main>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-block">
-        <div class="footer-icon">X</div>
+      <footer class="footer">
+        <div class="footer-circle">X</div>
+
         <div class="footer-info">
-          <div class="label">Telefone</div>
-          <div class="value">55+ 71 99151-7249</div>
+          <p><strong>Telefone</strong></p>
+          <p>55+ 71 93649-5079</p>
         </div>
-      </div>
 
-      <div class="footer-block">
-        <div class="footer-info" style="text-align: right">
-          <div class="label">Email</div>
-          <div class="value">
-            <a href="mailto:Adrianfoster518@gmail.com"
-              >monteirowilde518@gmail.com</a
-            >
-          </div>
+        <div class="footer-info email">
+          <p><strong>Email</strong></p>
+          <p>Adrianfoster518@gmail.com</p>
         </div>
-        <div class="footer-icon">X</div>
-      </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const nome = document.getElementById("nome").value.trim();
-          const telefone = document.getElementById("telefone").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const alert = document.getElementById("form-alert");
-
-          if (!nome || !telefone || !email) {
-            alert.className = "alert alert-danger mt-3";
-            alert.textContent = "Por favor, preencha todos os campos.";
-            alert.style.display = "block";
-            return;
-          }
-
-          alert.className = "alert alert-success mt-3";
-          alert.textContent = "Mensagem enviada com sucesso!";
-          alert.style.display = "block";
-
-          this.reset();
-
-          setTimeout(() => {
-            alert.style.display = "none";
-          }, 4000);
-        });
-    </script>
+        <div class="footer-circle">X</div>
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
